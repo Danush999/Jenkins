@@ -1,6 +1,8 @@
 pipeline {
   agent any
-  options { timestamps(); ansiColor('xterm') }
+  options {
+    timestamps()
+  }
 
   stages {
     stage('Checkout') {
@@ -32,7 +34,7 @@ pipeline {
   }
 
   post {
-    success { echo 'Build succeeded ✅' }
-    failure { echo 'Build failed ❌' }
+    success { echo 'Build succeeded' }
+    failure { echo 'Build failed' }
   }
 }
